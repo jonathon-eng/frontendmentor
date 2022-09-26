@@ -1,0 +1,346 @@
+
+
+
+@media only screen and (max-width: 1114px)  {
+    #background {
+     top: 0;
+     right: 0;
+  
+    }
+ 
+ }
+ 
+ 
+ /* front part of card */
+ 
+ body #background {
+ position: absolute;
+ top:0;
+ left:0;
+ height: 100%;
+ width: 40%;
+ display: flex;
+ }
+ 
+ .creditCard {
+ 
+ 
+     height: 600px;
+     width: 600px;
+     display: block;
+      /* turn on later */
+ }
+ 
+ .cardBG {
+ 
+     position: relative;
+     display: block;
+     top: 50px;
+     left: 60px;
+     width: 447px;
+     height: 245px;
+     background-image: url(images/bg-card-front.png);
+     background-repeat: none;
+ 
+     
+     
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ .logo{
+     position: absolute;
+     top: 30px;
+     left: 30px;
+     user-select: none;
+ }
+ 
+ .number {
+     position: absolute;
+     color: white;
+     font-family: 'Space Grotesk', sans-serif;
+     font-size: 30px;
+     font-weight: 500;
+     letter-spacing: 3px;
+     display: flex;
+     user-select: none;
+ 
+     flex-wrap: nowrap;
+     top: 45%;
+     left: 30px;
+  
+ }
+ 
+ .name {
+     position: absolute;
+     color: white;
+     text-transform: uppercase;
+     font-family: 'Space Grotesk', sans-serif;
+     font-size: 13px;
+     letter-spacing: 3px;
+     display: flex;
+     user-select: none;
+     flex-wrap: nowrap;
+     bottom: 20px;
+     left: 30px;
+ 
+     
+ }
+ 
+ 
+ .expiration, #month{
+     position: absolute;
+     color: white;
+     font-family: 'Space Grotesk', sans-serif;
+     font-size: 13px;
+     letter-spacing: 3px;
+     bottom: 10px;
+     right: 49px;
+     user-select: none;
+     
+ }
+ .expiration, #spacer{
+     position: absolute;
+     color: white;
+     font-family: 'Space Grotesk', sans-serif;
+     font-size: 13px;
+     letter-spacing: 3px;
+     bottom: 10px;
+     right: 43px;
+     user-select: none;
+     
+ }
+ 
+ 
+ 
+ .expiration, #year{
+     position: absolute;
+     color: white;
+     font-family: 'Space Grotesk', sans-serif;
+     font-size: 13px;
+     letter-spacing: 3px;
+     bottom: 10px;
+     right: 19px;
+     text-align: left;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ /* back part of card */
+ 
+ .cardBack {
+     position: absolute;
+     width: 447px;
+     height: 245px;
+     background-image: url(images/bg-card-back.png);
+     top: 350px;
+     left: 150px;
+ 
+     
+ }
+ 
+ #CardholderName{
+     width: 100%;
+ }
+ #CardNumber{
+     width: 100%;
+ }
+ 
+ .informationInput .checksum{
+     color: red;
+     display: none;
+ }
+ 
+ .extra {
+     display: grid;
+     padding-bottom: 40px;
+     grid-template-columns: repeat(3, 70px);
+     grid-template-rows: repeat(2, 15px);
+     column-gap: 10px;
+     row-gap: 0px;
+ 
+ 
+     grid-template-areas:
+       "a a b"
+       "c c d"
+       "e e f";
+   }
+   .date{
+     grid-area: a;
+   }
+   .cvc {
+     grid-area: b;
+ 
+   }
+   .dates{
+     grid-area: c;
+     display: flex;
+     
+   }
+   
+ .code1 {
+     grid-area: d;
+    
+ }
+ 
+ .invalid1 {
+     grid-area: e;
+     color: red;
+     padding-top: 30px;
+     display: none;
+ }
+ 
+ .invalid2 {
+     grid-area: f;
+     color: red;
+     width: 200%;
+     padding-top:30px;
+     display: none;
+  
+ }
+ 
+ 
+ 
+ 
+ .security {
+     position: absolute;
+     top: 42%;
+     right: 11%;
+     color: white;
+     font-family: 'Space Grotesk', sans-serif;
+     font-size: 13px;
+     letter-spacing: 3px;
+     user-select: none;
+ }
+ 
+ 
+ 
+ form {
+     position: absolute;
+     top: 50%;
+     right:10%;
+     font-family: 'Space Grotesk', sans-serif;
+     color: black;
+     letter-spacing: 3px;
+ 
+     width: 350px;
+ 
+ 
+ }
+ 
+ input[type=text] {
+ 
+     padding: 12px 20px;
+     margin: 8px 0;
+     box-sizing: border-box;
+     border: 2px solid rgb(108, 108, 108);
+     border-radius: 10px;
+     
+    
+   }
+ 
+ .mon, .year {
+ 
+     width: 70px;
+     height: 40px;
+     
+ }
+ 
+ 
+ 
+ .code {
+     width: 150px;
+     height: 40px;
+ }
+ 
+ 
+ 
+ /* information */
+ .informationInput {
+     position: absolute;
+     right: 10%;
+     left: 50%;
+     top: 30%;
+ 
+ }
+ 
+ input[type=text]:active {
+    outline: linear-gradient( hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+ }
+
+ input[type=text]:focus {
+     /* outline: 2px solid red; */
+ }
+ 
+ input[type=submit] {
+     color: white;
+     background: purple;
+     border: none;
+     border-radius: 10px;
+     width: 100%;
+     height: 40px;
+     font-size: 18px;
+ }
+ 
+ input[type=submit]:hover{
+     cursor: pointer;
+ }
+ 
+ button {
+ width: 350px;
+ height: 40px;
+ background-color: purple;
+ border: none;
+ border-radius: 10px;
+ color: white;
+ font-size: 1rem;
+ font-weight: 500;
+ }
+ 
+ button:hover {
+     cursor: pointer;
+ }
+ 
+ .complete {
+     width: 600px;
+     height: 400px;
+     position: absolute;
+     right: 10%;
+     left: 50%;
+     top: 30%;
+     display: grid;
+     align-items: center;
+     justify-content: center;
+     outline: 20px red solid;
+     background-color: white;
+     display: none;
+ }
+ 
+ .complete h2 {
+     font-family: 'Space Grotesk', sans-serif;
+     font-size: 30px;
+     font-weight: 500;
+ }
+ 
+ .complete h3 {
+     font-family: 'Space Grotesk', sans-serif;
+     font-size: 10px;
+     font-weight: 500;
+ }
+ 
+ 
+ 
+ .attribution {
+     position: absolute;
+     bottom: 10px;
+     left: 50%;
+     right: 50%;
+     display: grid;
+     overflow-wrap:break-word;
+ }
