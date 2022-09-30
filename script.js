@@ -56,5 +56,5 @@ function validateNumber() {
     };
     
 
-    var comButton = document.getElementById("wh").value;
+    var comButton = document.getElementById("wh");
     comButton.addEventListener('submit', complete);
