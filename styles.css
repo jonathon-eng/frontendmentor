@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+
+:root{
+--gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+--Red: hsl(0, 100%, 66%);
+--White: hsl(0, 0%, 100%);
+--LG-violet: hsl(270, 3%, 87%);
+--DG-violet: hsl(279, 6%, 55%);
+--VD-violet: hsl(278, 68%, 11%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--White);
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+    
+}
+
+
+/* Overlayed cards */
+
+
+.wrapper {
+    height: auto;
+    width: auto;
+    z-index: 2;
+    position: absolute;   
+
+    
+  }
+  
+  .wrapper > .cards > .face {
+    background-image: url(./images/bg-card-front.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 11px;
+    box-shadow: 10px 14px 33px 3px rgba(0,0,0,0.3);
+    width: 259px;
+    height: 152px;
+  }
+
+
+
+  /* logo */
+
+  .wrapper  {
+    left:1%;
+    top:1%;
+
+  }
+
+  /* Credit top line text */
+
+.wrapper > .cards > .face > .topLine {
+   padding-left: 16px;
+   width: 100%;
+}
+
+.wrapper > .cards > .face > .topLine > .number {
+    font-size: 1rem;
+    padding-right: 1rem;
+    
+    
+}
+
+/* Credit bottom line text */
+.wrapper > .cards > .face > .bottomLine{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0 16px 16px;
+}
+
+.wrapper > .cards > .face > .bottomLine > *{
+font-size: 12px;
+
+}
+
+.wrapper > .cards > .face > .head {
+    padding: 16px 0 16px 16px;
+}
+
+.wrapper > .cards > .face > .bottomLine > .end {
+    position: absolute;
+    right: 16px;
+    display: flex;
+}
+.wrapper > .cards > .face > .bottomLine > .end > * {
+    
+ 
+    font-size: 12px;
+}
+
+
+
+.wrapper1 {
+    width: 413px;
+    height: 223px;
+    position: absolute;
+    display: flex;
+    top: -2%;
+    left: 6%;
+    z-index: 0;
+    
+}
+
+
+.wrapper1 > .cards {
+    background-image: url(./images/bg-card-back.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+    width: 60%;
+    border-radius: 11px;
+    position: sticky;
+  }
+
+  .wrapper1 > .cards > .face > .CVC > .number {
+    position: absolute;
+top: 60px;
+left: 196px;
+font-size: 12px;
+  }
+
+
+
+
+/* Mobile First */
+html{
+    height: 100%;
+    max-width: 100%;
+    /* overflow-x: hidden; */
+}
+
+.background{
+    width: 100%;
+}
+
+/* Start state */
+
+.informationInput{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.informationInput > form  {
+    background-color: var(--White);
+    padding-inline: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-block: 3rem;
+    font-size: .8rem;
+}
+
+.informationInput > form > div > label, .bottomForms > .exp > label {
+    color: var(--VD-violet);
+    font-size: .8rem;
+    
+}
+
+.informationInput > form > div > input, .bottomForms > .exp > .MMYY > input, .bottomForms > .exp > input{
+    color: var(--VD-violet);
+    width: 100%;
+    padding-inline: 1rem;
+    box-sizing: border-box;
+    margin-block: .5rem;
+    border: none;
+    outline: 1px solid var(--LG-violet);
+    border-radius: 10px;
+    padding-block: .5rem;
+    font-size: .8rem;
+    
+
+    /* why is the sample image using a pointer here?? */
+    cursor: pointer;
+}
+
+.informationInput > form > div > input:focus, .bottomForms > .exp > .MMYY > input:focus, .bottomForms > .exp > input:focus {
+    /* Thanks to https://nikitahl.com/gradient-border-css for gradient border */
+    background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(45deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    
+}
+
+.bottomForms > .exp{
+    width: 95%;
+}
+
+.informationInput > form > input::placeholder, .bottomForms > .exp > .MMYY > input::placeholder, .bottomForms > .exp > input::placeholder {
+    color: var(--DG-violet);
+    font-size: .7rem;
+}
+
+.bottomForms {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.bottomForms:nth-child(1) {
+    flex-basis: 30%;
+}
+
+.bottomForms > .exp > .MMYY {
+    display: flex;
+    gap: .4rem;
+    flex: auto;
+}
+
+
+.informationInput > form > input[type=submit]{
+    margin-top: 1rem;
+    font-weight: 200;
+    font-size: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--VD-violet);
+    box-shadow: 0px 8px 4px 0px rgba(0,0,0,0.3);
+    cursor: pointer;
+    color: var(--White);
+    width: 100%;
+    
+}
+
+.informationInput > form > input[type=submit]:hover {
+    filter: brightness(1.1);
+}
+
+
+/* Complete State */
+
+
+
+.complete {
+    
+    display: none;
+    flex-direction: column;
+    padding-inline: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-block: 3rem;
+    font-size: .8rem;
+}
+
+.complete > img {
+    width: 20%;
+    box-sizing: border-box;
+    margin: auto;
+    padding-block: 1rem;
+}
+
+.complete > * { 
+color: var(--VD-violet);
+text-align: center;
+}
+
+.complete > h1 {
+    font-size: 2rem;
+    padding-block: 1rem;
+    height:100%
+}
+
+.complete > h2 {
+    font-size: 1rem;
+    padding-block: 1rem;
+}
+
+.complete > form > input[type=submit]{
+    margin-block: 1rem;
+    font-weight: 200;
+    font-size: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--VD-violet);
+    box-shadow: 0px 8px 4px 0px rgba(0,0,0,0.3);
+    cursor: pointer;
+    color: var(--White);
+    margin-bottom: 2rem;
+    width: 100%;
+    
+}
+
+.informationInput > form > input[type=submit]:hover {
+    filter: brightness(1.1);
+}
+
+
+
+
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.informationInput > #myForm > .input-control > input[type=form]:not(:focus):invalid{
+    border-color: 2px solid hsl(0, 100%, 74%);
+}
+.input-control .error {
+    color:hsl(0, 100%, 74%)
+}
+
+
+.error { 
+color: hsl(0, 100%, 74%); 
+font-weight: 400; 
+font-size: .7rem;
+text-align: Left bottom;
+padding-bottom: 1rem;
+display: grid;
+
+
+}
+
+
+.informationInput > form > .bottomForms > .exp > .error2my  { 
+display: none;
+color: hsl(0, 100%, 74%); 
+font-weight: 400; 
+font-size: .7rem;
+text-align: Left bottom;
+padding-bottom: 1rem;
+
+}
+
+.informationInput > form > .bottomForms > .exp > .error2cvc  { 
+display: none;
+color: hsl(0, 100%, 74%); 
+font-weight: 400; 
+font-size: .7rem;
+text-align: Left bottom;
+padding-bottom: 1rem;
+}
+
+
+
+
+@media (min-width: 266px) {
+    .wrapper  {
+        left:3%;
+        top:9%;
+       
+    
+      }
+  }
+@media (min-width: 300px) {
+    .wrapper  {
+        left: 6%;
+        top: 13%;
+      }
+      .wrapper1 {
+        top: 1%;
+        left: 11%;
+      }
+  }
+  @media only screen and (min-width: 373px) {
+    .wrapper  {
+        left: 10%;
+        top: 18%;
+      }
+
+      .wrapper1 {
+        top: 4%;
+        left: 26%;
+      }
+      
+  }
+
+  @media only screen and (min-width: 393px) {
+    .background {
+        display: none;
+    }
+    body {
+        display: flex;
+        justify-content: right;
+        padding: 0;
+        background-image: url(./images/bg-main-desktop.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        overflow-y: hidden;
+    }
+
+
+    .informationInput {
+        width: 40%;
+        display: grid;
+        flex-direction: none;
+        align-self: auto;
+        margin-top: 10%; 
+        margin-right: 15%;
+        margin-left: 50%;
+    }
+
+    .wrapper  {
+        left: 15%;
+        top: 15%;
+      }
+
+      .wrapper1 {
+        top: 47%;
+        left: 21%;
+      }
+
+      .wrapper1 > .cards {
+        box-shadow: 0px 8px 4px 0px rgba(0,0,0,.3);
+      }
+
+      .complete {
+        width: 40%;
+        height: 40%;
+      
+        flex-direction: none;
+        margin-top: 10%; 
+        margin-right: 15%;
+        margin-left: 50%;
+      }
+
+}
+
+
+  @media only screen and (min-width: 820px) {
+    .background {
+        display: none;
+    }
+    body {
+        display: flex;
+        justify-content: right;
+        padding: 0;
+        background-image: url(./images/bg-main-desktop.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        overflow-y: hidden;
+    }
+
+    .informationInput {
+        width: 40%;
+        display: grid;
+        flex-direction: none;
+        align-self: auto;
+        margin-top: 10%; 
+        margin-right: 15%;
+        margin-left: 50%;
+    }
+
+
+    .wrapper  {
+        left: 15%;
+        top: 15%;
+      }
+
+      .wrapper1 {
+        top: 47%;
+        left: 21%;
+      }
+
+      .wrapper > .cards > .face{
+        box-shadow: 0px 8px 4px 0px rgba(0,0,0,.3);
+      }
+
+}

@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
   
   <title>Frontend Mentor | Interactive card details form</title>
 
@@ -13,52 +14,99 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+    
   </style>
 </head>
 
 <body>
-  <img id="background" src="./images/bg-main-mobile.png">
-  <div class="creditCard">
-    <div class="cardBG">
 
-          <img class="logo" src="./images/card-logo.svg" draggable="false">
-          <p class="number"><span id="number">0000 0000 0000 0000</span></p>
-          <p class="name"><span id="name">Jon Eng</span></p>
-          <p class="expiration"><span id="month">MM</span> &nbsp; <span id="spacer">/</span> &nbsp; <span id="year">YY</span></p>
-    </div>
-    <div class="cardBack">
-      <p class="security"><span id="CVC">000</span></p>
-    </div>
+<!--  -->
 
-    
+<div class="wrapper">
+  <div class="cards">
+      <div class="face">
+          <div class="head">
+              <img src="./images/card-logo.svg">
+          </div>
+          <div class="topLine">
+              <p class="number" id="number" >0000 0000 0000 0000</p>
+          </div>
+          <div class="bottomLine">
+              <div class="start" id="name">
+                  Jonathon Eng
+              </div>
+              <div class="end">
+                <p id="month">00</p>
+                <p>/</p>
+                <p id="year">12</p>
+              </div>
+          </div>
+      </div>
   </div>
+</div>
+
+<div class="wrapper1">
+  <div class="cards">
+      <div class="face">
+          <div class="CVC">
+              <p class="number" id="CVC">000</p>
+          </div>
+      </div>
+  </div>
+</div>
 
 
-  <div class="informationInput">
+
+
+
+<!--  -->
+
+
+  <img class="background" src="./images/bg-main-mobile.png">
+
+  <div class="informationInput" id="start">
   
-    <form>
-      <label for="CardholderName" >CARDHOLDER NAME</label><br>
-      <input type="text" id="CardholderName" name="Name" placeholder="JANE DOE" onkeyup="nameFunc()" required autocomplete="off"><br>
-      <label for="CardNumber">CARD NUMBER</label><br>
-      <input autocomplete="off" type="text" id="CardNumber" name="number" placeholder="0000 0000 0000 0000" onkeyup="cardFunc()"  inputmode="numerical"  pattern="[0-9]*" maxlength="16" >
-      <p class="checksum">Wrong format, numbers only.</p>
-        <div class="extra">
-          
-          <label class="date" for="date">EXP. DATE</label><br>
-            <div class="dates">
-              <input autocomplete="off"  class="mon" id="CardMonth" maxlength="2" max="12" min="1" pattern="[0-9]*" inputmode="numerical" placeholder="MM" type="text" data-pattern-validate onkeyup="mFunc()" required />
-              <input autocomplete="off" class="year" id="CardYear" maxlength="2" pattern="[0-9]*" inputmode="numerical" placeholder="YY" type="text" data-pattern-validate onkeyup="yFunc()" required/>
-            </div>
-            <p class="invalid1">Can't be blank.</p>
-            <label class="cvc" for="CVC">CVC</label><br>
-            <div class="code1">
-              <input autocomplete="off" onkeyup="cvcFunc()" class="code" id="CardCVC" maxlength="3" pattern="[0-9]*" inputmode="numerical" placeholder="000" type="text" data-pattern-validate required/>
-            </div>
-            <p class="invalid2">Can't be blank.</p>
+    <form id="myform">
+      <div class="input-control">
+        <label for="CardholderName" >CARDHOLDER NAME</label>
+        <input type="text" id="CardholderName" name="name" placeholder="e.g. Jon S. Eng"   autocomplete="off" onkeyup="nameFunc()"/>
+        <div class="error"></div>
+      </div>
+
+      <div class="input-control">
+        <label for="CardNumber">CARD NUMBER</label>
+        <input autocomplete="off" type="text" id="CardNumber" name="number" placeholder="e.g. 1234 5678 9123 0000"   inputmode="numerical"  pattern="[0-9]*" maxlength="16" 
+        onkeyup="cardFunc()" />
+        <div class="error"></div>
+      </div>
+
+      
+      <div class="bottomForms">
+        
+        <div class="exp">
+          <label for="Exp">
+            EXP. DATE (MM/YY)
+          </label>
+          <div class="MMYY"> 
+            <input type="text" for="Exp" placeholder="MM" minlength="2" maxlength="2" id="CardMonth" onkeyup="mFunc()"/>
+            <input type="text" for="Exp" placeholder="YY" minlength="2" maxlength="2" id="CardYear" onkeyup="yFunc()"/>
+          </div>
+          <div class="error2my" id="error2my">Can't be blank</div>
         </div>
-        <button id="wh" type="submit" value="Confirm" onsubmit="complete()">Confirm</button>
-    </div>
+        
+        
+        <div class="exp">
+          <label for="CVC">CVC
+          </label>
+          <input type="text" for="CVC" placeholder="e.g. 123" minlength="3" maxlength="3" id="CardCVC" onkeyup="cvcFunc()"/>
+          <div class="error2cvc" id="error2cvc">Can't be blank</div>
+        </div>
+        
+      </div>
+      
+      <input type="submit" value="Confirm"></input>
+     
+
     </form> 
 
    
@@ -66,20 +114,33 @@
   </div>
 
   <!-- Completed state start -->
-<div class="complete">
-<img src="./images/icon-complete.svg">
-  <h2>Thank you!
+<div class="complete" id="complete">
+  <img src="images/icon-complete.svg" alt="Completed image">
+  <h1>THANK YOU!
+  </h1>
+  <h2>We've added your card details
   </h2>
-  <h3>We've added your card details
-  </h3>
-  <input id="complete" type="submit" value="Continue" >
+
+  <form>
+    <input id="complete" type="submit" value="Continue" >
+  </form>
+</div> 
+
+
+<!-- <div class="wrap">
+
+  <div class="card" id="front">
+</div>
+     -->
 </div>
 
-  <div class="attribution">
+
+
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Jon Eng</a>.
-  </div>
-  <script src="script.js"></script>
+  </div> -->
+  
 </body>
 
 </html>
