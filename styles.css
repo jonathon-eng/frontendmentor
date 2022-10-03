@@ -472,5 +472,17 @@ padding-bottom: 1rem;
       .wrapper > .cards > .face{
         box-shadow: 0px 8px 4px 0px rgba(0,0,0,.3);
       }
+      
+      /* Attribution */
+
+.attribution {
+    font-size: 11px;
+    text-align: center; 
+    margin-block: 3rem;
+}
+.attribution a {
+    color: hsl(0, 0%, 100%);
+    
+}
 
 }
